@@ -1,5 +1,7 @@
-# Online Python compiler (interpreter) to run Python online.
-# Write Python 3 code in this online editor and run it.
+# 1. Two Sum
+# Given an array of integer nums and an integer target, returnindices of the two numbers such that they add up to the target.
+# You may assume that each input would have exactly one solution,and you may not use the same element twice.
+# You can return the answer in any order.
 print("Two Sum")
 
 lst = [2,5,1,7,8]
@@ -12,3 +14,16 @@ for i in range(length):
     if tgt-lst[i] in hm:
         print("Indices are",i,hm[tgt-lst[i]])
         break
+
+#Method 2
+lst = [2, 5, 1, 9, 3]
+tgt = 4
+hm = {}
+for i in range(len(lst)):
+
+    print(hm, tgt - lst[i])
+    if (tgt - lst[i]) in hm.values():
+        print("Indices are ", list(hm.values()).index(tgt - lst[i]), i)
+        exit
+    hm[i] = lst[i]  # hm["color"]="red" #Add here as if added on line 23 before if statement, 
+#the code won't run since the hm will already have key=2.
