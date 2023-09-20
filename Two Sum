@@ -1,0 +1,14 @@
+# Online Python compiler (interpreter) to run Python online.
+# Write Python 3 code in this online editor and run it.
+print("Two Sum")
+
+lst = [2,5,1,7,8]
+tgt = 12
+hm = {}
+length = len(lst)
+for i in range(length):
+    hm[lst[i]] = i
+    #print(hm)
+    if tgt-lst[i] in hm:
+        print("Indices are",i,hm[tgt-lst[i]])
+        break
