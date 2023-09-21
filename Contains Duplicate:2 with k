@@ -1,0 +1,18 @@
+#3. Contains Duplicate
+#Given an integer array nums, return true if any value appears atleast twice in the array, and return false if every element isdistinct.
+#Input: nums = [1,2,3,1] and abs(i-j) <= k
+#Output: true
+nums = [11,22,33,1,12,22]
+hm,i,j = {},0,2
+while j>i:
+    if j == len(nums):
+        j = i + 2
+        i += 1
+    elif nums[i] != nums[j]:
+        j += 1
+    elif nums[i] == nums[j] and (j-i)<=4:
+        print("Num i and nums j", i,nums[i], j,nums[j])
+        print("True")
+        break
+    elif i == j:
+        break
