@@ -1,0 +1,11 @@
+#3. Contains Duplicate
+#Given an integer array nums, return true if any value appears atleast twice in the array, and return false if every element isdistinct.
+#Input: nums = [1,2,3,1]
+#Output: true
+nums = [11,22,33,1,22]
+hm = {}
+for i in range(len(nums)):
+    if nums[i] in hm.values():
+        print("true")
+    hm[i] = nums[i]
+print(hm)
