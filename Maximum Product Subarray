@@ -1,0 +1,13 @@
+#Maximum Product Subarray
+#Given an integer array nums, find a subarray that has the largestproduct, and return the product.
+#Input : nums = [2,3,-2,4] Output: 6 Explanation: [2,3] has the largest product 6.
+#Input : nums = [-2,0,-1] Output: 0 Explanation: The result cannot be 2, because [-2,-1] is not asubarray.
+nums = [2,3,0,-2,4,3]
+curr_prod = 1
+prod = []
+for i in range(len(nums)):
+    if curr_prod == 0 or curr_prod < 0:
+        curr_prod = 1
+    curr_prod *= nums[i]
+    prod.append(curr_prod)
+print("Max product is ",prod, max(prod))
