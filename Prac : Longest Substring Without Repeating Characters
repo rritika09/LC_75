@@ -1,0 +1,51 @@
+# 1. Longest Substring Without Repeating Characters
+# Given a string s, find the length of the longest substring without repeating characters.
+# Input : s = "abcabcbb" Output: 3
+# Explanation : The answer is "abc", with a length of 3.
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        s = ""
+        left, right = 0, 0
+        out, visited = [], []
+        lngth = {}
+        print(len(s))
+        for left in range(len(s)):
+            right = left
+            word = s[left]
+            while right < len(s):
+                # print(s[left],s[right])
+                if s[left] != s[right] and s[right] not in visited:
+                    word = word + s[right]
+                    print("New word is ", word)
+                    # print(word.join(s[right]))
+                    # visited.append(s[right])
+                elif s[right] in visited:
+                    break
+                visited.append(s[right])
+                print("Visited chars ", visited)
+                right = right + 1
+                out.append(word)
+            visited = []
+            print(out)
+            cnt=[]
+        for i in out:
+            cnt.append(len(i))
+            #print(lngth)
+
+        for i in out:
+            lngth[i] = len(i)
+            lst = list(lngth.values())
+        #Keymax = max(zip(lngth.values(), lngth.keys()),default=0)[0]    #zip is imp in making pairs out of two lists.
+		#print("Zipped ",list(zip(lngth.values(), lngth.keys())))
+		#output of above will be [(1, 'a'), (2, 'ab'), (3, 'abc'), (1, 'b'), (2, 'bc'), (3, 'bca'), (1, 'c'), (2, 'ca'), (3, 'cab'), (2, 'cb')]
+        max_lst = list(lngth.values())
+        print(max_lst)
+        Keymax = max(max_lst,default=0)
+		#to put a default in max or to handle None with max(),min() use default
+        #cnt_out = max(cnt)
+        print("Values ",Keymax)
+        return Keymax
+
+s = Solution()
+print("Longest substring ",s.lengthOfLongestSubstring("abcabcbb"))
+
