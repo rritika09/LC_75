@@ -1,0 +1,16 @@
+#1. Longest Substring Without Repeating Characters
+#Given a string s, find the length of the longest substring without repeating characters.
+#Input : s = "abcabcbb" Output: 3
+#Explanation : The answer is "abc", with a length of 3.
+#First attempt
+s = "pwwkew"
+hm = {}
+out = []
+for i in s:
+    hm[i] = hm.get(i, 0) + 1
+    if hm.get(i,0)>1:
+        break
+    out.append(i)
+print(hm)
+print("out ",out)
+print("".join(out))
